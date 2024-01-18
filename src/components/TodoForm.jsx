@@ -1,13 +1,15 @@
 import { useState } from 'react';
 
-const TodoForm = () => {
+const TodoForm = ({ addTodo }) => {
     const [value, setValue] = useState("");
     const [category, setCategory] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        
-        console.log(valeu, category);
+        if (!value || !category) return;
+        addTodo(value, category);
+        setValue("");
+        setCategory("");
     };
 
     return (
@@ -17,9 +19,10 @@ const TodoForm = () => {
                 <input 
                 type="text" 
                 placeholder='Digite seu título' 
-                onChange={(e) => setValue(e.target.valeu)}
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
                 />
-                <select onChange={(e) => setCategory(e.target.valeu)}>
+                <select value={category} onChange={(e) => setCategory(e.target.value)}>
                     <option value="">Selecione uma categoria</option>
                     <option value="Trabalho">Trabalho</option>
                     <option value="Pessoal">Pessoal</option>
