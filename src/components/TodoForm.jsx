@@ -24,11 +24,11 @@ const TodoForm = ({ addTodo }) => {
                 />
                 <select value={category} onChange={(e) => setCategory(e.target.value)}>
                     <option value="">Selecione uma categoria</option>
-                    <option value="Trabalho">Trabalho</option>
-                    <option value="Pessoal">Pessoal</option>
-                    <option value="Estudar">Estudar</option>
+                    <option value="Trabalho">🟠 Trabalho</option>
+                    <option value="Pessoal">🟢 Pessoal</option>
+                    <option value="Estudar">🟡 Estudar</option>
                 </select>
-                <button type='submit'>Criar tarefa</button>
+                <button type='submit'>📋 Criar tarefa</button>
             </form>
         </div>
     ); 
